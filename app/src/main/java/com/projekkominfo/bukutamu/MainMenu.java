@@ -2,7 +2,6 @@ package com.projekkominfo.bukutamu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -10,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
@@ -172,6 +172,25 @@ public class MainMenu extends AppCompatActivity {
             return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri)) ;
 
         }
+
+    public boolean doubleTap = false;
+    @Override
+    public void onBackPressed(){
+        if(doubleTap){
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleTap = true;
+        Toast.makeText(this, "Ketuk kembali 2 kali untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleTap = false;
+            }
+        }, 2000);
+    }
 
         // Creating UploadImageFileToFirebaseStorage method to upload image on storage.
         public void UploadImageFileToFirebaseStorage() {

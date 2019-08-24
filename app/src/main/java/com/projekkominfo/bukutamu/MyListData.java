@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -107,6 +108,24 @@ public class MyListData extends AppCompatActivity {
                 });
     }
 
+    public boolean doubleTap = false;
+    @Override
+    public void onBackPressed(){
+        if(doubleTap){
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleTap = true;
+        Toast.makeText(this, "Ketuk kembali 2 kali untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleTap = false;
+            }
+        }, 2000);
+    }
 
     //Methode yang berisi kumpulan baris kode untuk mengatur RecyclerView
     private void MyRecyclerView(){

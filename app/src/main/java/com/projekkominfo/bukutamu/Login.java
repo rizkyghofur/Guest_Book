@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         if(firebaseAuth.getCurrentUser() != null){
             finish();
-            startActivity(new Intent(getApplicationContext(), MainMenu.class));
+            startActivity(new Intent(getApplicationContext(), MainData.class));
         }
 
         editTextEmail = findViewById(R.id.user);
@@ -71,7 +72,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this,"Login berhasil",Toast.LENGTH_LONG).show();
                             finish();
-                            startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                            startActivity(new Intent(getApplicationContext(), MainData.class));
                         }
                         else{
                             Toast.makeText(Login.this,"Login Error, cek kembali email dan kata sandi Anda",Toast.LENGTH_LONG).show();
@@ -85,5 +86,24 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if(view == buttonSignIn){
             userLogin();
         }
+    }
+
+    public boolean doubleTap = false;
+    @Override
+    public void onBackPressed(){
+        if(doubleTap){
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleTap = true;
+        Toast.makeText(this, "Ketuk kembali 2 kali untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleTap = false;
+            }
+        }, 2000);
     }
 }
