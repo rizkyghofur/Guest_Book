@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainData"
+    android:orientation="vertical"
+    android:background="@drawable/bgg">
+
+        <ImageView
+            android:id="@+id/logobuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logob"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"/>
+
+        <ImageView
+            android:id="@+id/logokom"
+            android:layout_width="157dp"
+            android:layout_height="205dp"
+            android:src="@drawable/logok"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"/>
+
+        <Button
+            android:id="@+id/input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input data"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="460dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_bg"/>
+
+        <Button
+            android:id="@+id/lihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lihat data"
+            android:textColor="@color/white"
+            android:layout_marginLeft="255dp"
+            android:layout_marginTop="520dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_bg"/>
+
+</RelativeLayout>

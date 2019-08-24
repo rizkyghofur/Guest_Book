@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bggg"
+    tools:context=".MainMenu">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/bukutamu"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/title"
+                    android:layout_alignBottom="@+id/title"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/tulisan_buku_tamu" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etNik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:hint="NIK"
+                android:inputType="number"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:hint="Nama"
+                android:inputType="text"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:hint="Alamat"
+                android:inputType="text"
+                android:textColorHint="@color/grey" />
+
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:textSize="9pt"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:text="Tanggal/Bulan/Tahun"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/etPihak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:hint="Pihak Yang Dituju"
+                android:inputType="text"
+                android:textColorHint="@color/grey" />
+
+            <Button
+                android:id="@+id/etGambar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:drawableLeft="@drawable/ic_camera"
+                android:text="Scan Surat"
+                android:inputType="text"
+                android:textColorHint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="345dp"
+                android:layout_height="345dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_black_24dp" />
+
+            <EditText
+                android:id="@+id/etTujuan"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/edittext_form"
+                android:hint="Tujuan"
+                android:inputType="textMultiLine"
+                android:textColorHint="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/etSubmit"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_form"
+                    android:text="Simpan"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/etbersih"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_form"
+                    android:layout_marginLeft="20dp"
+                    android:text="Menu Utama"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
